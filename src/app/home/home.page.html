@@ -7,12 +7,19 @@
 </ion-header>
 
 <ion-content>
-  <ion-searchbar
-    placeholder="Buscar Cidade..."
-  ></ion-searchbar>
+  <ion-grid>
+    <ion-row>
+      <ion-col size-sm="10" offset-sm="1" size-md="8" offset-md="2">
+        <ion-searchbar
+          placeholder="Buscar Cidade..."
+        ></ion-searchbar>
 
-  <ion-list lines="none">
-    <app-city-details name="Lavras" state="MG"></app-city-details>
-    <app-city-details name="São Carlos" state="SP"></app-city-details>
-  </ion-list>
+        <ion-list lines="none">
+          <app-city-details name="Lavras" state="MG"></app-city-details>
+          <app-city-details name="São Carlos" state="SP"></app-city-details>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <!--<app-error-message message="Serviço indisponível!" buttonText="Tentar novamente"></app-error-message>-->
 </ion-content>

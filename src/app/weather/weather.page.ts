@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
+import { WeatherDetailsComponent } from '../home/components/weather-details/weather-details.component';
 
 @Component({
   selector: 'app-weather',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WeatherPage implements OnInit {
 
-  constructor() { }
+  constructor(private readonly modalCtrl: ModalController) { }
 
   ngOnInit() {
+  }
+
+  async onSeeDetails() {
+    const modal = await this.modalCtrl.create({
+      component: WeatherDetailsComponent,
+    });
+    modal.present();
   }
 
 }

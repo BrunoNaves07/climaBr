@@ -6,6 +6,7 @@ import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
 import { CityDetailsComponent } from './components/city-details/city-details.component';
+import { ErrorMessageComponent } from './components/error-message/error-message.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { CityDetailsComponent } from './components/city-details/city-details.com
   ],
   declarations: [
     HomePage,
-    CityDetailsComponent
+    CityDetailsComponent,
+    ErrorMessageComponent
   ]
 })
 export class HomePageModule {}
