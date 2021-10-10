@@ -13,9 +13,10 @@ export class SearchCityService {
       return [];
     }
 
-    const cities: City[] = await this.cityRepo.getAll();
+    const cities = await this.cityRepo.getAll();
+
     const filteredCities = cities.filter(
-      (city) => city.name.toLowerCase().indexOf(query.toLowerCase()) > -1
+      (item) => item.name.toLowerCase().indexOf(query.toLowerCase()) > -1
     );
 
     if (filteredCities.length == 0) {

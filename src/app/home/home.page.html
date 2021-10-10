@@ -16,14 +16,19 @@
           (ionChange)="onSearch(searchInput.value)"
           placeholder="Buscar Cidade..."
         ></ion-searchbar>
-
-        <ion-list lines="none" *ngIf="!hasError">
-          <app-city-details *ngFor="let city of cities" name="{{city.name}}" state="{{city.state}}"></app-city-details>
-        </ion-list>
         <app-error-message
         message="{{errorMessage}}"
         *ngIf="hasError"
         ></app-error-message>
+        <ion-list lines="none" *ngIf="!hasError">
+          <app-city-details
+          *ngFor="let city of cities"
+          id="{{city.id}}"
+          name="{{city.name}}"
+          state="{{city.state}}"
+          (selectCity)="onSelectCity($event)"
+          ></app-city-details>
+        </ion-list>
       </ion-col>
     </ion-row>
   </ion-grid>
